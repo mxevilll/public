@@ -35,7 +35,7 @@ app.post('/create-payment-intent', async (req, res) => {
 });
 
 // Endpoint for Stripe webhook
-const endpointSecret = "whsec_FhNQHIVwm3VWUoAcUu6CoYP6AflrP3lf";
+const endpointSecret = "";
 
 app.post('/webhook', bodyParser.raw({ type: 'application/json' }), (request, response) => {
   const sig = request.headers['stripe-signature'];
