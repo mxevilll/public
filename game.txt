@@ -1,0 +1,40 @@
+Script Description: Telegram Dating Bot
+This script is a Telegram dating bot that automates the process of matching users based on their responses to a questionnaire and their preferences. It uses Python, MySQL, and Telegram Bot API to manage user interactions, store data, and facilitate matchmaking.
+
+📌 Key Features:
+User Registration & Profile Setup
+
+The bot asks users for their name, gender, age, and city.
+Users answer 10 relationship-related questions to define their preferences.
+Users are required to upload a profile photo.
+Database Management (MySQL)
+
+Stores user data, answers, and uploaded photos.
+Saves user interactions and matches (likes and mutual likes).
+Ensures only opposite-gender profiles (based on user preferences) are shown.
+Candidate Matching Algorithm
+
+Filters candidates by gender preference and city match.
+Ensures users do not see the same profile twice until all candidates are shown.
+Allows users to like or skip profiles.
+Mutual Match Notifications
+
+If two users like each other, the bot notifies both.
+Provides a direct link to start a private chat on Telegram.
+Users can continue browsing other candidates.
+Handling User Input & Photos
+
+Accepts text responses for the questionnaire.
+Stores user photos locally and links them to user profiles.
+Uses Telegram inline buttons for multiple-choice questions.
+Admin Functions & Error Handling
+
+Database initializes on launch if tables do not exist.
+Exception handling prevents crashes due to unexpected inputs.
+Logs errors when executing SQL queries.
+🛠️ Technology Stack:
+Python: Main programming language.
+MySQL: Stores user data, responses, and matches.
+Telegram Bot API: Handles all interactions.
+Asyncio & Nest_asyncio: Ensures smooth asynchronous operations.
+Python Telegram Ext: Used for managing messages, buttons, and callbacks.

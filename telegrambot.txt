@@ -1,0 +1,28 @@
+Script Description: Air Raid Alert Bot for Telegram
+This script is a Telegram bot designed to monitor and report air raid alerts in the Dnipro region (Ukraine). It fetches real-time alerts from an API and sends automatic warnings to a Telegram group when an air raid begins or ends.
+
+📌 Key Features:
+Fetches Real-Time Air Raid Alerts
+
+The script requests data from an external API to check for active alerts.
+Filters alerts specifically for the Dnipro region.
+Extracts the alert type and timestamps.
+Telegram Bot Integration
+
+Automatically sends a warning message to a designated Telegram group when an air raid starts.
+Sends an "All Clear" message when the alert is over.
+Uses asynchronous communication to ensure real-time updates.
+Alert Type Handling & Filtering
+
+Translates technical alert types into user-friendly warnings (e.g., "air_raid" → "ВОЗДУШНАЯ ТРЕВОГА").
+Ignores artillery shelling alerts to avoid unnecessary panic.
+Continuous Monitoring & Update Mechanism
+
+The bot runs an infinite loop, checking for updates every 20 seconds.
+Keeps track of active alerts to avoid duplicate messages.
+Automatically removes expired alerts once they are no longer active.
+🛠️ Technology Stack:
+Python: Core programming language.
+Requests: Fetches data from the alert API.
+Asyncio: Ensures efficient, non-blocking execution.
+Python Telegram Bot: Manages Telegram message sending.

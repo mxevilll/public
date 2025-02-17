@@ -1,0 +1,33 @@
+Script Description: WebRTC Streaming and Payment-Integrated Socket Server
+This script is a WebSocket-based real-time communication server for live video streaming and monetized interactions using Socket.IO and PeerJS. It enables streamers to broadcast live video to viewers while supporting real-time chat, payments, and private sessions.
+
+📌 Key Features:
+1. WebRTC-Based Video Streaming
+Uses PeerJS to facilitate peer-to-peer (P2P) connections.
+Supports streamers (broadcasters) and viewers (watchers).
+Notifies viewers when a streamer is ready or disconnects.
+2. Real-Time Chat with WebSockets
+Users can send and receive messages within their respective rooms.
+Messages are broadcasted to all users in the same room.
+3. Live Viewer Count Updates
+Tracks the number of viewers in a stream and updates the UI dynamically.
+Ensures streamers get real-time feedback on their audience size.
+4. Integrated Payment System
+Viewers can make payments to streamers.
+The server splits the payment amount, crediting half to the streamer.
+Starts a 900-second countdown timer after a payment is made.
+5. Private Session Handling
+When a viewer makes a payment, the server:
+Credits tokens to the streamer.
+Sends a "viewer-paid" event to notify the streamer.
+Starts a private session timer.
+Streamers can end all private sessions manually.
+6. Automatic Cleanup on Disconnect
+If a viewer disconnects, their count is updated.
+If a streamer disconnects, their room is cleared and notified.
+🛠️ Technology Stack:
+Node.js & Express.js: Backend server.
+Socket.IO: Real-time WebSocket communication.
+PeerJS: WebRTC-based video streaming.
+CORS: Handles cross-origin communication.
+HTTP & WebSockets: Provides dual support for REST API and WebSockets.

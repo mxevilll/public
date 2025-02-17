@@ -1,0 +1,22 @@
+Script Description: Stripe Payment API for Taronium
+This script is a Node.js-based payment processing API that integrates Stripe to handle online transactions for the Taronium platform. It provides endpoints for creating payments, handling webhooks, and processing checkout sessions while ensuring security and compliance.
+
+📌 Key Features:
+1. Payment Processing with Stripe
+Creates PaymentIntents: Generates a client secret that the frontend can use to complete the payment securely.
+Checkout Sessions: Allows users to pay through Stripe’s hosted checkout pages.
+2. Secure Webhook Handling
+Listens to Stripe webhooks for successful payments.
+Validates webhook events using Stripe’s secret signature.
+Extracts user data from successful transactions for further processing.
+3. CORS Configuration
+Allows cross-origin requests from Taronium.com and localhost (for testing).
+Supports credentials for secure cookie handling.
+4. Error Handling & Logging
+Catches API errors and returns meaningful messages.
+Logs payment statuses and webhook events.
+🛠️ Technology Stack:
+Node.js & Express.js: Server framework.
+Stripe API: Handles payment transactions.
+CORS: Manages cross-origin resource sharing.
+Body-Parser: Parses incoming JSON requests.
