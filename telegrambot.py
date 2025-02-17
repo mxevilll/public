@@ -4,7 +4,7 @@ from datetime import datetime
 from telegram import Bot
 from telegram.error import TelegramError
 
-# Конфигурация
+
 ALERTS_API_URL = "https://api.alerts.in.ua/v1/alerts/active.json"  # URL API
 ALERTS_API_TOKEN = ""  # Токен доступа API
 TELEGRAM_BOT_TOKEN = ""  # Токен Telegram бота
@@ -21,7 +21,7 @@ ALERT_TYPE_TRANSLATIONS = {
 
 bot = Bot(token=TELEGRAM_BOT_TOKEN)
 
-# Функция для форматирования времени
+
 def format_time(iso_time):
     try:
         dt = datetime.fromisoformat(iso_time.replace("Z", "+00:00"))  # Преобразование ISO времени
@@ -29,7 +29,7 @@ def format_time(iso_time):
     except ValueError:
         return "Неизвестное время"
 
-# Функция для получения активных тревог
+
 def get_active_alerts():
     params = {"token": ALERTS_API_TOKEN}  
     try:
@@ -63,7 +63,6 @@ async def send_alert_message(region_name, alert_type, started_at):
     except TelegramError as e:
         print(f"Ошибка при отправке сообщения в Telegram: {e}")
 
-# Асинхронная функция для отправки сообщений о завершении тревоги
 async def send_alert_end_message(region_name, alert_type, finished_at):
 
     translated_alert_type = ALERT_TYPE_TRANSLATIONS.get(alert_type, "Неизвестный тип тревоги")
